@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>wuyans</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 2018.4.10 wuyans-->
+    <servlet>
+       <servlet-name>FirstServlet</servlet-name>
+       <servlet-class>FirstServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>FirstServlet</servlet-name>
+       <url-pattern>/firstServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+      <!-- 2018.4.13 wuyans-->
+    <servlet>
+       <servlet-name>LoginServlet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>LoginServlet</servlet-name>
+       <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- 2018.4.17 -->
+    <filter>
+    <filter-name> AuthorityFilter </filter-name>
+    <filter-class> cn.edu.lingnan.filter.AuthorityFilter</filter-class>
+    </filter>
+    <filter-mapping>
+    <filter-name>  AuthorityFilter </filter-name>
+    <url-pattern>  /admin/* </url-pattern>
+    </filter-mapping>
+    
+         <filter>
+    <filter-name> CharacterEncodingFilter </filter-name>
+    <filter-class> cn.edu.lingnan.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <description>设置字符编码</description>
+      <param-name>encoding</param-name>
+      <param-value>GB2312</param-value>    
+    </init-param>
+    </filter>
+    <filter-mapping>
+    <filter-name>  CharacterEncodingFilter </filter-name>
+    <url-pattern>  /* </url-pattern>
+    </filter-mapping>
+    <!--2018.4.20 wuyans-->
+     <servlet>
+       <servlet-name>RegisterServlet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>RegisterServlet</servlet-name>
+       <url-pattern>/registerServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+       <servlet-name>LoginoutServlet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.LoginoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>LoginoutServlet</servlet-name>
+       <url-pattern>/loginoutServlet</url-pattern>
+    </servlet-mapping>
+    
+     <!--2018.5.4 wuyans-->
+     <servlet>
+       <servlet-name>FindAllUser</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.FindAllUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>FindAllUser</servlet-name>
+       <url-pattern>/admin/findAllUser</url-pattern>
+    </servlet-mapping>
+    
+     <!--2018.5.4 wuyans-->
+     <servlet>
+       <servlet-name>DeleteclientServlet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.DeleteclientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>DeleteclientServlet</servlet-name>
+       <url-pattern>/admin/deleteclientServlet</url-pattern>
+    </servlet-mapping>
+    
+     <!--2018.5.4 wuyans-->
+     <servlet>
+       <servlet-name>UpdateClientServlet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.UpdateClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>UpdateClientServlet</servlet-name>
+       <url-pattern>/admin/updateClientServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- 2018.5.8 -->
+
+    
+     <!-- 2018.5.11 -->
+     <jsp-config>
+      <taglib>
+        <taglib-uri>/testtags</taglib-uri>
+        <taglib-location>/WEB-INF/tlds/myTags.tld</taglib-location>
+      </taglib>
+      <!-- 2018.5.15 -->
+       <taglib>
+        <taglib-uri>/jstlc</taglib-uri>
+        <taglib-location>/WEB-INF/tlds/c.tld</taglib-location>
+      </taglib>
+      
+       <taglib>
+        <taglib-uri>/jstlsql</taglib-uri>
+        <taglib-location>/WEB-INF/tlds/sql.tld</taglib-location>
+      </taglib>
+      
+     </jsp-config>
+     
+     <!--2018.5.20 wuyans-->
+     <servlet>
+       <servlet-name>FindAllticket</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.FindAllticket</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>FindAllticket</servlet-name>
+       <url-pattern>/admin/findAllticket</url-pattern>
+    </servlet-mapping>
+    
+        <!--2018.5.20 wuyans-->
+     <servlet>
+       <servlet-name>DeleteticketServlet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.DeleteticketServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>DeleteticketServlet</servlet-name>
+       <url-pattern>/admin/deleteticketServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!--2018.5.20 wuyans-->
+     <servlet>
+       <servlet-name>UpdateticketServlet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.UpdateticketServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>UpdateticketServlet</servlet-name>
+       <url-pattern>/admin/updateticketServlet</url-pattern>
+    </servlet-mapping>
+      <!--2018.5.23 wuyans-->
+    <servlet>
+       <servlet-name>DeleteCheckclientServet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.DeleteCheckclientServet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>DeleteCheckclientServet</servlet-name>
+       <url-pattern>/admin/deleteCheckclientServet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+       <servlet-name>NameCheckServlet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.NameCheckServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>NameCheckServlet</servlet-name>
+       <url-pattern>/nameCheckServlet</url-pattern>
+    </servlet-mapping>
+    
+     <!--2018.5.27 wuyans-->
+     <servlet>
+       <servlet-name>FindAllorderform</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.FindAllorderform</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>FindAllorderform</servlet-name>
+       <url-pattern>/admin/findAllorderform</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+       <servlet-name>UpdateorderformServlet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.UpdateorderformServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>UpdateorderformServlet</servlet-name>
+       <url-pattern>/admin/updateorderformServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+       <servlet-name>DeleteorderformServlet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.DeleteorderformServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>DeleteorderformServlet</servlet-name>
+       <url-pattern>/admin/deleteorderformServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- 2018.5.28 -->
+     <servlet>
+       <servlet-name>DeleteCheckticketServet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.DeleteCheckticketServet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>DeleteCheckticketServet</servlet-name>
+       <url-pattern>/admin/deleteCheckticketServet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+       <servlet-name>DeleteCheckorderformServet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.DeleteCheckorderformServet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>DeleteCheckorderformServet</servlet-name>
+       <url-pattern>/admin/deleteCheckorderformServet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- 2018.6.1 -->
+     <servlet>
+       <servlet-name>InsertclientServlet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.InsertclientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>InsertclientServlet</servlet-name>
+       <url-pattern>/admin/insertclientServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+       <servlet-name>InsertticketServlet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.InsertticketServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>InsertticketServlet</servlet-name>
+       <url-pattern>/admin/insertticketServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+     <servlet>
+       <servlet-name>InsertorderformServlet</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.InsertorderformServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>InsertorderformServlet</servlet-name>
+       <url-pattern>/admin/insertorderformServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- 用户模块 -->
+ <!--2018.5.4 wuyans-->
+     <servlet>
+       <servlet-name>YHFindAllticket</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.YHFindAllticket</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>YHFindAllticket</servlet-name>
+       <url-pattern>/yHFindAllticket</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+       <servlet-name>Findmyself</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.Findmyself</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>Findmyself</servlet-name>
+       <url-pattern>/findmyself</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+       <servlet-name>Order</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.Order</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>Order</servlet-name>
+       <url-pattern>/order</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+       <servlet-name>Myorderform</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.Myorderform</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>Myorderform</servlet-name>
+       <url-pattern>/myorderform</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+       <servlet-name>Searchclient</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.Searchclient</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>Searchclient</servlet-name>
+       <url-pattern>/admin/searchclient</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+       <servlet-name>Searchticket</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.Searchticket</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>Searchticket</servlet-name>
+       <url-pattern>/admin/searchticket</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+       <servlet-name>Searchorder</servlet-name>
+       <servlet-class>cn.edu.lingnan.servlets.Searchorder</servlet-class>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>Searchorder</servlet-name>
+       <url-pattern>/admin/searchorder</url-pattern>
+    </servlet-mapping>
+    
+    
+</web-app>

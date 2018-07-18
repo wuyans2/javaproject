@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css1/style1.css">
+  <meta charset="GB2312">
+  <title>注册页面</title> 
+  <meta http-equiv="Cache-control" content="no-cache"/>
+  <script>
+  function check(){
+	 if(form.clientID.value==""){
+		 alert("用户ID不能为空");
+		 form.clientID.focus();
+		 return false;
+	 }
+	 if(form.username.value==""){
+		 alert("用户名不能为空");
+		 form.username.focus();
+		 return false;
+	 }
+	 if(form.tel.value==""){
+		 alert("用户电话不能为空");
+		 form.tel.focus();
+		 return false;
+	 }
+	 var regm2 = /^[0-9]+$/
+		 if(!form.tel.value.match(regm2)){
+			 alert("电话输入不合法，请输入数字");
+			 form.tel.focus();
+			 return false;
+		 }
+	 if(form.password.value==""){
+		 alert("用户密码不能为空");
+		 form.password.focus();
+		 return false;
+	 }
+	 if(form.superuser.value==""){
+		 alert("用户权限不能为空");
+		 form.superuser.focus();
+		 return false;
+	 }
+	 var regm3 = /^[2]?$/
+		 if(!form.superuser.value.match(regm3)){
+			 alert("您只能注册为普通用户，请输入“2”");
+			 form.superuser.focus();
+			 return false;
+		 }
+	 if(form.state.value==""){
+		 alert("用户状态不能为空");
+		 form.state.focus();
+		 return false;
+	 }	  
+	 var regm4 = /^[1]?$/
+		 if(!form.state.value.match(regm4)){
+			 alert("注册为存在用户，请输入“1”");
+			 form.state.focus();
+			 return false;
+		 }
+  } 
+  function createXmlHttpRequest(){
+	    var xmlreq = false;
+	    if (window.XMLHttpRequest){
+	        xmlreq = new XMLHttpRequest();
+	    }else
+	        if (window.ActiveXObject){
+	    	try{
+	    	    xmlreq = new ActiveXObject("Msxml2.XMLHTTP");
+	    	}catch(e1){
+	    	    try{
+	    	        xmlreq = new ActiveXObject("Microsoft.XMLHTTP");
+	    	    }catch(e2){
+	    	    }
+	    	}
+	    }
+	    return xmlreq;   	
+	}
+
+  function userNameCheck(){
+      var request = createXmlHttpRequest();
+      var username = document.all.username.value;
+      request.open("post","nameCheckServlet?username="+username);
+      request.send();
+      request.onreadystatechange = function(){
+  	if(request.readyState==4){
+  	        var value = request.responseText;
+  	        if(value=="true"){
+  	                document.all.username.value="该用户名已存在";
+  	        }
+      	}
+      }
+}
+
+  
+  </script>
+      
+</head>
+
+<body>
+
+  <div id="login">
+  <form  action="registerServlet" name="form">
+    <h2>Register</h2>
+    <input type="text" id="clientID" name="clientID" placeholder="clientID">
+    <input type="text" id="name" name="username" placeholder="name" onBlur="userNameCheck();">
+    <input type="text" id="tel" name="tel" placeholder="tel">
+    <input type="password" id="password" name="password" placeholder="Password">
+    <input type="text" id="superuser" name="superuser" placeholder="superuser">
+    <input type="text" id="state" name="state" placeholder="state">
+    <button onClick="return check();" value="Register">Register</button>
+  </form>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+</body>
+
+</html>

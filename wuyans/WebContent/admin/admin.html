@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="GB2312">
+<title>管理员界面</title>
+<meta http-equiv="Cache-control" content="no-cache"/>
+<link rel="stylesheet" type="text/css" href="css/public.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<link rel="stylesheet" type="text/css" href="css/css.css" />
+
+</head>
+
+<body>
+ <div class="head">
+		<div class="headL">
+			<img class="headLogo" src=""/>
+		</div>
+		<h1 style='font-size:38px'>&nbsp;&nbsp;&nbsp;&nbsp;订票系统后台管理</h1>
+		<div class="headR">
+			<span style="color:#FFF">欢迎你，管理员</span> <a href="http://localhost:8080/wuyans/index.html">【退出】</a>
+		</div>
+	</div>
+	<body id="bg">
+	<!-- 左边节点 -->
+	<div class="container">
+
+		<div class="leftsidebar_box">
+			<a href="" target="main"><div class="line">
+					<img src="img/coin01.png" />&nbsp;&nbsp;首页
+				</div></a>
+			<dl class="system_log">
+				<dt>
+					<img class="icon1" src="img/coin03.png" /><img class="icon2"
+						src="img/coin04.png" /> 客户管理<img class="icon3"
+						src="img/coin19.png" /><img class="icon4"
+						src="img/coin20.png" />
+				</dt>
+				<dd>
+					<img class="coin11" src="img/coin111.png" /><img class="coin22"
+						src="img/coin222.png" /><a href="findAllUser">查找所有用户</a><img class="icon5" src="img/coin21.png" />
+				</dd>
+				<dd>
+					<img class="coin11" src="img/coin111.png" /><img class="coin22"
+						src="img/coin222.png" /><a href="insertclientInfo.jsp">添加用户</a><img class="icon5" src="img/coin21.png" />
+				</dd>
+			</dl>
+			<dl class="system_log">
+				<dt>
+					<img class="icon1" src="img/coin01.png" /><img class="icon2"
+						src="img/coin02.png" /> 机票管理<img class="icon3"
+						src="img/coin19.png" /><img class="icon4"
+						src="img/coin20.png" />
+				</dt>
+				<dd>
+					<img class="coin11" src="img/coin111.png" /><img class="coin22"
+						src="img/coin222.png" /><a href="findAllticket">查看全部机票</a><img class="icon5" src="img/coin21.png" />
+				</dd>
+				<dd>
+					<img class="coin11" src="img/coin111.png" /><img class="coin22"
+						src="img/coin222.png" /><a href="insertticketInfo.jsp">添加机票</a><img class="icon5" src="img/coin21.png" />
+				</dd>
+			</dl>
+			<dl class="system_log">
+				<dt>
+					<img class="icon1" src="img/coin07.png" /><img class="icon2"
+						src="img/coin08.png" /> 订单管理<img class="icon3"
+						src="img/coin19.png" /><img class="icon4"
+						src="img/coin20.png" />
+				</dt>
+				<dd>
+					<img class="coin11" src="img/coin111.png" /><img class="coin22"
+						src="img/coin222.png" /><a href="findAllorderform">查看全部订单</a><img class="icon5" src="img/coin21.png" />
+				</dd>
+				<dd>
+					<img class="coin11" src="img/coin111.png" /><img class="coin22"
+						src="img/coin222.png" /><a href="insertorderformInfo.jsp">添加订单</a><img class="icon5" src="img/coin21.png" />
+				</dd>
+			</dl>
+		</div>
+	</div>
+        <!--  我是超级用户 --> 
+    <!--<a href="findAllUser">查找所有用户</a>  -->
+    <!-- <a href="findAllticket">查看全部机票信息</a> -->
+    <!-- <a href="findAllorderform">查看全部订单</a> -->
+</body>
+
+</html>
